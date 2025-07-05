@@ -1,16 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
+import Badge from '../components/ui/Badge.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import MailIcon from '../components/icons/Mail.astro';
-import SocialPill from '../components/SocialPill.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
+import SocialPill from '../components/ui/SocialPill.astro';
+import Experience from '../components/sections/Experience.astro';
+import SectionContainer from '../components/ui/SectionContainer.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import ProfileCheck from '../components/icons/ProfileCheck.astro';
-import Projects from '../components/Projects.astro';
-import AboutMe from '../components/AboutMe.astro';
+import Projects from '../components/sections/Projects.astro';
+import CommunityImpact from '../components/sections/CommunityImpact.astro';
+import AboutMe from '../components/sections/AboutMe.astro';
 ---
 
 <Layout 
@@ -77,6 +78,14 @@ import AboutMe from '../components/AboutMe.astro';
         Projects
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="community">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white">
+        <CodeIcon class="size-7" />
+        Open Source & Community Impact
+      </h2>
+      <CommunityImpact />
     </SectionContainer>
 
     <SectionContainer id="about">
