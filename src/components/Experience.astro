@@ -6,31 +6,82 @@ const EXPERIENCE = [
     date: "October 2024 - Present",
     title: "Frontend Engineer",
     company: "LinkAmericaLabs",
-    description: "Developed high-impact applications in healthcare and financial services. Engineered remote patient monitoring platform using React Server Components. Achieved 45% improvement in frontend performance through optimization.",
+    description: "Clients: HeartBeam, Sagicor. Developed high-impact applications in healthcare and financial services. For HeartBeam: Engineered a remote patient monitoring platform using React Server Components and Suspense. Integrated TanStack Query and Zustand for efficient real-time state management. Achieved a 45% improvement in frontend performance through optimization and refactors. For Sagicor: Built a BI dashboard for financial analysts with a scalable architecture. Enhanced UX/UI, reducing onboarding friction and improving usability. Implemented CI/CD pipelines using GitHub Actions and Docker.",
     link: "https://linkamericalabs.com",
   },
-  {
-    date: "2024",
-    title: "Hackathon Winner",
-    company: "Base LATAM Buildathon",
-    description: "Built BuildMyEvent - No-code platform for creating event pages and selling NFT-based tickets on Base blockchain. White-label support and scalable architecture.",
-    link: "https://buildmyevent.xyz",
-  },
+]
+
+const COMMUNITY_IMPACT = [
   {
     date: "2025",
-    title: "Community Organizer",
+    title: "Web3 Projects & Community Impact",
     company: "StarMaker Web3 & ETH Pura Vida",
-    description: "Organized first StarMaker Web3 event in Costa Rica, introducing 60+ students to Stellar and Web3. Volunteering as organizer for ETH Pura Vida.",
+    description: "Organized the first StarMaker Web3 event in Costa Rica (TEC, June 2025), introducing 60+ students to Stellar, NFTs, and decentralized technologies. Partnering with universities to expand blockchain education initiatives. Volunteering as Web Developer and Organizer for ETH Pura Vida, the upcoming Ethereum community event in Costa Rica.",
+  },
+  {
+    date: "2024-2025",
+    title: "Open-Source Contributions (OnlyDust)",
+    company: "OnlyDust",
+    description: "Top 44 contributor out of 9,000+ developers on OnlyDust. Active in Stellar, Optimism, and Starknet open-source ecosystems. Contributions include smart contracts, governance logic, DX, and documentation.",
+  },
+]
+
+const EDUCATION = [
+  {
+    date: "2025 - 2028",
+    title: "Bachelor's Degree in Computer Engineering",
+    company: "ULACIT",
+    description: "",
+  },
+  {
+    date: "2019 - 2024",
+    title: "Technical High School in Web Development",
+    company: "Don Bosco Technical High School",
+    description: "",
   },
 ]
 ---
 
-<ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
-</ol>
+<div class="space-y-16">
+  <!-- Professional Experience -->
+  <section>
+    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Professional Experience</h3>
+    <ol class="relative">
+      {
+        EXPERIENCE.map((experience) => (
+          <li class="">
+            <ExperienceItem {...experience} />
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Community Impact -->
+  <section>
+    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Web3 Projects & Community Impact</h3>
+    <ol class="relative">
+      {
+        COMMUNITY_IMPACT.map((experience) => (
+          <li class="">
+            <ExperienceItem {...experience} />
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Education</h3>
+    <ol class="relative">
+      {
+        EDUCATION.map((experience) => (
+          <li class="">
+            <ExperienceItem {...experience} />
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</div>
