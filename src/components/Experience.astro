@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+  {
+    date: "October 2024 - Present",
+    title: "Frontend Engineer",
+    company: "LinkAmericaLabs",
+    description: "Developed high-impact applications in healthcare and financial services. Engineered remote patient monitoring platform using React Server Components. Achieved 45% improvement in frontend performance through optimization.",
+    link: "https://linkamericalabs.com",
+  },
+  {
+    date: "2024",
+    title: "Hackathon Winner",
+    company: "Base LATAM Buildathon",
+    description: "Built BuildMyEvent - No-code platform for creating event pages and selling NFT-based tickets on Base blockchain. White-label support and scalable architecture.",
+    link: "https://buildmyevent.xyz",
+  },
+  {
+    date: "2025",
+    title: "Community Organizer",
+    company: "StarMaker Web3 & ETH Pura Vida",
+    description: "Organized first StarMaker Web3 event in Costa Rica, introducing 60+ students to Stellar and Web3. Volunteering as organizer for ETH Pura Vida.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
