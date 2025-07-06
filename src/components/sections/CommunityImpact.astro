@@ -1,81 +1,88 @@
 ---
-import GitHub from "../icons/GitHub.astro"
-import Link from "../icons/Link.astro"
-import LinkButton from "../ui/LinkButton.astro"
+import GitHub from "../icons/GitHub.astro";
+import Link from "../icons/Link.astro";
+import LinkButton from "../ui/LinkButton.astro";
 
 const COMMUNITY_PROJECTS = [
-  {
-    title: "Open Source Contributions - OnlyDust",
-    description:
-      "Top 44 contributor out of 9,000+ developers on OnlyDust. Active in Stellar, Optimism, and Starknet open-source ecosystems. Contributions include smart contracts, governance logic, DX, and documentation.",
-    github: "https://github.com/kevinlatino",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Open Source", "Stellar", "Optimism", "Starknet"],
-  },
-  {
-    title: "StarMaker Web3 Event - Costa Rica",
-    description:
-      "Organized the first StarMaker Web3 event in Costa Rica (TEC, June 2025), introducing 60+ students to Stellar, NFTs, and decentralized technologies. Partnering with universities to expand blockchain education initiatives.",
-    link: "https://starmaker.xyz",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Community", "Education", "Web3", "Stellar"],
-  },
-  {
-    title: "ETH Pura Vida - Ethereum Community",
-    description:
-      "Volunteering as Web Developer and Organizer for ETH Pura Vida, the upcoming Ethereum community event in Costa Rica. Building the local Ethereum ecosystem and fostering blockchain adoption.",
-    link: "https://ethpuravida.xyz",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Ethereum", "Community", "Web3", "Costa Rica"],
-  },
-]
+    {
+        title: "Open Source Contributions - OnlyDust",
+        description:
+            "Top 44 contributor out of 9,000+ developers on OnlyDust. Active in Stellar, Optimism, and Starknet open-source ecosystems. Contributions include smart contracts, governance logic, DX, and documentation.",
+        github: "https://github.com/kevinlatino",
+        image: "/placeholder.svg?height=400&width=600",
+        tags: ["Open Source", "Stellar", "Optimism", "Starknet"],
+    },
+    {
+        title: "StarMaker Web3 Event - Costa Rica",
+        description:
+            "Organized the first StarMaker Web3 event in Costa Rica (TEC, June 2025), introducing 60+ students to Stellar, NFTs, and decentralized technologies. Partnering with universities to expand blockchain education initiatives.",
+        link: "https://starmaker.xyz",
+        image: "/images/Kevin-Explaining.jpg",
+        tags: ["Community", "Education", "Web3", "Stellar"],
+    },
+    {
+        title: "ETH Pura Vida - Ethereum Community",
+        description:
+            "Volunteering as Web Developer and Organizer for ETH Pura Vida, the upcoming Ethereum community event in Costa Rica. Building the local Ethereum ecosystem and fostering blockchain adoption.",
+        link: "https://ethpuravida.xyz",
+        image: "/placeholder.svg?height=400&width=600",
+        tags: ["Ethereum", "Community", "Web3", "Costa Rica"],
+    },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
-  {
-    COMMUNITY_PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Community project screenshot" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image || "/placeholder.svg"} />
-    </div>
-  </div>
+    {
+        COMMUNITY_PROJECTS.map(
+            ({ image, title, description, tags, link, github }) => (
+                <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+                    <div class="w-full md:w-1/2">
+                        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                            <img
+                                alt="Community project screenshot"
+                                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                                src={image || "/placeholder.svg"}
+                            />
+                        </div>
+                    </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class="flex gap-x-2 rounded-full text-xs bg-purple-600 text-white py-1 px-2"
-              >
-                {tag}
-              </span>
-            </li>
-          ))}
-        </ul>
+                    <div class="w-full md:w-1/2 md:max-w-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                            {title}
+                        </h3>
+                        <div class="flex flex-wrap mt-2">
+                            <ul class="flex flex-row mb-2 gap-x-2">
+                                {tags.map((tag) => (
+                                    <li>
+                                        <span class="flex gap-x-2 rounded-full text-xs bg-purple-600 text-white py-1 px-2">
+                                            {tag}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              GitHub
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Visit
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
-    ))
-  }
-</div> 
+                            <div class="mt-2 text-gray-700 dark:text-gray-400">
+                                {description}
+                            </div>
+                            <footer class="flex items-end justify-start mt-4 gap-x-4">
+                                {github && (
+                                    <LinkButton href={github}>
+                                        <GitHub class="size-6" />
+                                        GitHub
+                                    </LinkButton>
+                                )}
+                                {link && (
+                                    <LinkButton href={link}>
+                                        <Link class="size-4" />
+                                        Visit
+                                    </LinkButton>
+                                )}
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            ),
+        )
+    }
+</div>
+

@@ -9,6 +9,7 @@ import SectionContainer from '../components/ui/SectionContainer.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import ProfileCheck from '../components/icons/ProfileCheck.astro';
+import Education from '../components/sections/Education.astro';
 import Projects from '../components/sections/Projects.astro';
 import CommunityImpact from '../components/sections/CommunityImpact.astro';
 import AboutMe from '../components/sections/AboutMe.astro';
@@ -88,12 +89,21 @@ import AboutMe from '../components/sections/AboutMe.astro';
       <CommunityImpact />
     </SectionContainer>
 
-    <SectionContainer id="about">
+
+    <SectionContainer id="community">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white">
+        <CodeIcon class="size-7" />
+        Education
+      </h2>
+      <Education />
+    </SectionContainer>
+
+    <!-- <SectionContainer id="about">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white">
         <ProfileCheck class="size-8" />
         About me
       </h2>
       <AboutMe />
-    </SectionContainer>
+    </SectionContainer> -->
   </main>
 </Layout>
