@@ -6,13 +6,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "astro": "^5.11.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "tailwindcss": "^3.4.17"
+    "@types/node": "^24.0.10",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
   }
 }

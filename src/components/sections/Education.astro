@@ -1,18 +1,7 @@
 ---
-import ExperienceItem from "../ui/ExperienceItem.astro";
-
-const education = [
-    {
-        date: "2025 - 2028",
-        title: "Bachelor's Degree in Computer Engineering",
-        company: "ULACIT",
-    },
-    {
-        date: "2019 - 2024",
-        title: "Technical High School in Web Development",
-        company: "Don Bosco Technical High School",
-    },
-];
+import type { Education } from '@/types';
+import { education } from '@/constants/experience';
+import ExperienceItem from '@/components/ui/ExperienceItem.astro';
 ---
 
 <div class="space-y-16">
@@ -23,9 +12,9 @@ const education = [
         </h3>
         <ol class="relative">
             {
-                education.map((experience) => (
+                education.map((edu: Education) => (
                     <li class="">
-                        <ExperienceItem {...experience} />
+                        <ExperienceItem {...edu} />
                     </li>
                 ))
             }

@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+dist/
+.astro/
+
+# Build outputs
+build/
+.output/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Images and other assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.woff
+*.woff2
+*.ttf
+*.eot 

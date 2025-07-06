@@ -1,47 +1,14 @@
 ---
-import GitHub from "../icons/GitHub.astro";
-import NextJS from "../icons/NextJS.astro";
-import Tailwind from "../icons/Tailwind.astro";
-import Link from "../icons/Link.astro";
-import LinkButton from "../ui/LinkButton.astro";
-
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-};
-
-const projects = [
-  {
-    title: "BuildMyEvent - Event Platform",
-    description:
-      "No-code platform for creating event pages and selling NFT-based tickets on Base blockchain. Winner of Base LATAM Buildathon 2024.",
-    link: "https://buildmyevent.xyz",
-    github: "https://github.com/kevinlatino",
-    image: "/images/BuildMyEvent.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: "Haibu - Decentralized Social Platform",
-    description:
-      "Social platform with DAO governance, gamification, and contributor incentives. Built for Celestia Mammothon 2025.",
-    github: "https://github.com/kevinlatino",
-    image: "/images/Haibu.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-];
+import type { Project } from '@/types';
+import { projects } from '@/constants/projects';
+import GitHub from '@/components/icons/GitHub.astro';
+import Link from '@/components/icons/Link.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    projects.map(({ image, title, description, tags, link, github }) => (
+    projects.map(({ image, title, description, tags, link, github }: Project) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
