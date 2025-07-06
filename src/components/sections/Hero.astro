@@ -3,14 +3,19 @@ import Badge from "../ui/Badge.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import MailIcon from "../icons/Mail.astro";
 import SocialPill from "../ui/SocialPill.astro";
+import GitHub from "../icons/GitHub.astro";
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
-      class="rounded-full shadow-lg size-16"
-      src="/placeholder.svg?height=64&width=64"
+      class="rounded-full shadow-lg size-28"
+      src="/images/KevinLatino.jpeg"
       alt="Kevin Latino photo"
+      loading="eager"
+      decoding="async"
+      width="112"
+      height="112"
     />
     <a
       href="mailto:latinokevin9@gmail.com"
@@ -29,8 +34,8 @@ import SocialPill from "../ui/SocialPill.astro";
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    <strong>Software Developer & Web3 Advocate</strong> from Costa Rica 🇨🇷. Specialized
-    in building full-stack applications with clean architecture and real-world impact.
+    <strong>Software Developer & Web3 Advocate</strong> from Costa Rica 🇨🇷.
+    Specialized in building full-stack applications with clean architecture and real-world impact.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:latinokevin9@gmail.com">
@@ -40,6 +45,10 @@ import SocialPill from "../ui/SocialPill.astro";
     <SocialPill href="https://linkedin.com/in/kevinlatino">
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/kevinlatino">
+      <GitHub class="size-4" />
+      GitHub
     </SocialPill>
   </nav>
 </div>
