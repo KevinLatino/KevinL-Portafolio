@@ -1,7 +1,7 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 
-const EDUCATION = [
+const education = [
     {
         date: "2025 - 2028",
         title: "Bachelor's Degree in Computer Engineering",
@@ -23,7 +23,7 @@ const EDUCATION = [
         </h3>
         <ol class="relative">
             {
-                EDUCATION.map((experience) => (
+                education.map((experience) => (
                     <li class="">
                         <ExperienceItem {...experience} />
                     </li>
