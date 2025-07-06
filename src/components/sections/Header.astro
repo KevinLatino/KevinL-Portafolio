@@ -1,59 +1,128 @@
 ---
-const navItems = [
-  { title: "Experience", label: "experience", url: "/#experience" },
-  { title: "Projects", label: "projects", url: "/#projects" },
-  { title: "About", label: "about", url: "/#about" },
-  { title: "Contact", label: "contact", url: "/#contact" },
+import type { NavigationItem } from '@/types';
+
+const navItems: NavigationItem[] = [
+  { id: 'experience', label: 'Experience', href: '/#experience' },
+  { id: 'projects', label: 'Projects', href: '/#projects' },
+  { id: 'community', label: 'Community', href: '/#community' },
+  { id: 'education', label: 'Education', href: '/#education' },
 ];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    id="header-nav"
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-  >
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4">
+  <nav id="header-nav" class="flex px-4 py-2 text-base font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center transition-all duration-300">
     {
-      navItems.map((link) => (
+      navItems.map((item) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
+          href={item.href}
+          class="relative block px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label={item.id}
+          data-section={item.id}
         >
-          {link.title}
+          {item.label}
         </a>
       ))
     }
     <div
       id="theme-toggle"
-      class="ml-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+      class="ml-3 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer transition-colors"
     >
-      <svg class="w-4 h-4 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+      <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
         <path
           fill-rule="evenodd"
           d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-          clip-rule="evenodd"></path>
-      </svg>
-      <svg
-        class="w-4 h-4 hidden dark:block"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path
-          d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          clip-rule="evenodd"
         ></path>
+      </svg>
+      <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
       </svg>
     </div>
   </nav>
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const themeToggle = document.getElementById("theme-toggle");
+  document.addEventListener('astro:page-load', () => {
+    const themeToggle = document.getElementById('theme-toggle');
 
-    themeToggle?.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
+    // Theme toggle
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
     });
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('a[href^="/#"]');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (href) {
+          const targetId = href.replace('/#', '');
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        }
+      });
+    });
+
+    // Active section highlighting and navbar background
+    function updateActiveSection() {
+      const scrollPosition = window.scrollY + 150; // Increased offset
+      const sections = ['experience', 'projects', 'community', 'education'];
+      const navItems = document.querySelectorAll('[data-section]');
+      const headerNav = document.getElementById('header-nav');
+
+      let activeSection: string | null = null;
+
+      // Add/remove background based on scroll position
+      if (window.scrollY > 50) {
+        headerNav?.classList.add('bg-white/80', 'dark:bg-gray-900/80', 'backdrop-blur-sm', 'border', 'border-gray-200', 'dark:border-gray-700');
+      } else {
+        headerNav?.classList.remove('bg-white/80', 'dark:bg-gray-900/80', 'backdrop-blur-sm', 'border', 'border-gray-200', 'dark:border-gray-700');
+      }
+
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            activeSection = sectionId;
+          }
+        }
+      });
+
+      // Update nav items
+      navItems.forEach((item) => {
+        const itemSection = item.getAttribute('data-section');
+        if (itemSection === activeSection) {
+          item.classList.add('text-yellow-500', 'dark:text-yellow-400');
+        } else {
+          item.classList.remove('text-yellow-500', 'dark:text-yellow-400');
+        }
+      });
+    }
+
+    // Update on scroll with throttling
+    let ticking = false;
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    
+    // Initial check
+    updateActiveSection();
   });
 </script>

@@ -17,7 +17,7 @@ import LinkButton from '@/components/ui/LinkButton.astro';
                         <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                             <img
                                 alt="Community project screenshot"
-                                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                                class="object-contain w-full h-72 transition duration-500 sm:h-80 md:scale-110 md:group-hover:scale-105"
                                 src={image || "/placeholder.svg"}
                             />
                         </div>
@@ -45,13 +45,13 @@ import LinkButton from '@/components/ui/LinkButton.astro';
                                 {github && (
                                     <LinkButton href={github}>
                                         <GitHub class="size-6" />
-                                        GitHub
+                                        {github.includes('onlydust') ? 'OnlyDust' : 'GitHub'}
                                     </LinkButton>
                                 )}
                                 {link && (
                                     <LinkButton href={link}>
                                         <Link class="size-4" />
-                                        Visit
+                                        {link.includes('onlydust') ? 'OnlyDust' : 'Visit'}
                                     </LinkButton>
                                 )}
                             </footer>

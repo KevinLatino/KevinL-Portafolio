@@ -25,12 +25,12 @@ export const projects: Project[] = [
     image: '/images/BuildMyEvent.png',
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
-  {
-    title: 'Haibu - Decentralized Social Platform',
-    description:
-      'Social platform with DAO governance, gamification, and contributor incentives. Built for Celestia Mammothon 2025.',
-    github: 'https://github.com/kevinlatino',
-    image: '/images/Haibu.png',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
+  // {
+  //   title: 'Haibu - Decentralized Social Platform',
+  //   description:
+  //     'Social platform with DAO governance, gamification, and contributor incentives. Built for Celestia Mammothon 2025.',
+  //   github: 'https://github.com/kevinlatino',
+  //   image: '/images/Haibu.png',
+  //   tags: [TAGS.NEXT, TAGS.TAILWIND],
+  // },
 ];
