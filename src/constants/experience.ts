@@ -1,20 +1,37 @@
+import { marked } from 'marked';
 import type { Experience, Education } from '@/types';
+
+function parseMarkdownSync(md: string): string {
+  return marked.parse(md) as string;
+}
 
 export const experience: Experience[] = [
   {
     date: 'October 2024 - Present',
-    title: 'Frontend Engineer',
-    company: 'LinkAmericaLabs - HeartBeam',
-    description:
-      'Engineered a remote patient monitoring platform using React Server Components and Suspense. Integrated TanStack Query and Zustand for efficient real-time state management. Achieved a 45% improvement in frontend performance through optimization and refactors.',
+    title: 'Frontend Engineer at LinkAmericaLabs',
+    company: 'Project: Heart Beam',
+    description: parseMarkdownSync(`
+**Objective:** Advanced patient monitoring platform.
+
+**Key Achievements:**
+- Real-time data optimization and medical service synchronization.
+- Redesigned React architecture, improving interactivity and reducing render time by 45%.
+- Migration to React Server Components for better performance.
+    `),
     link: 'https://linkamericalabs.com',
   },
   {
-    date: 'October 2024 - Present',
-    title: 'Frontend Engineer',
-    company: 'LinkAmericaLabs - Sagicor',
-    description:
-      'Built a BI dashboard for financial analysts with a scalable architecture. Enhanced UX/UI, reducing onboarding friction and improving usability. Implemented CI/CD pipelines using GitHub Actions and Docker.',
+    date: 'October 2024 - December 2024',
+    title: 'Frontend Engineer at LinkAmericaLabs',
+    company: 'Project: Sagicor',
+    description: parseMarkdownSync(`
+**Objective:** Automated data analysis solution.
+
+**Key Achievements:**
+- Scalable architecture, increasing efficiency by 70%.
+- CI/CD with GitHub Actions for continuous deployment.
+- UX/UI improvements, reducing errors and onboarding time.
+    `),
     link: 'https://linkamericalabs.com',
   },
 ];
