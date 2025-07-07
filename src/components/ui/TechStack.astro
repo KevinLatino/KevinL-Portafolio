@@ -1,0 +1,15 @@
+---
+export interface Tech {
+  name: string;
+  icon: any;
+}
+const { stack } = Astro.props as { stack: Tech[] };
+---
+<div class="flex flex-wrap gap-3 mt-2 items-center">
+  {stack.map((tech) => (
+    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 text-sm font-medium shadow-sm">
+      <tech.icon class="w-5 h-5" />
+      {tech.name}
+    </span>
+  ))}
+</div> 

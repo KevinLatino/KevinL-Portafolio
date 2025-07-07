@@ -25,6 +25,7 @@ export interface Experience {
   company: string;
   description: string;
   link?: string;
+  stack?: { name: string; icon: any }[];
 }
 
 // Education types
@@ -33,6 +34,7 @@ export interface Education {
   title: string;
   company: string;
   description?: string;
+  stack?: { name: string; icon: any }[];
 }
 
 // Tag types
