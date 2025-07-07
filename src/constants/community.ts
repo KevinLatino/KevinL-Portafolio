@@ -9,14 +9,14 @@ export const communityProjects: CommunityProject[] = [
     image: '/images/Open-Source.png',
     tags: ['Open Source', 'Stellar', 'Optimism', 'Starknet'],
   },
-  // {
-  //   title: 'StarMaker Web3 Event - Costa Rica',
-  //   description:
-  //     'Organized the first StarMaker Web3 event in Costa Rica (TEC, June 2025), introducing 60+ students to Stellar, NFTs, and decentralized technologies. Partnering with universities to expand blockchain education initiatives.',
-  //   link: 'https://starmaker.xyz',
-  //   image: '/images/Kevin-Explaining.jpg',
-  //   tags: ['Community', 'Education', 'Web3', 'Stellar'],
-  // },
+  {
+    title: 'StarMaker Web3 Event - Costa Rica',
+    description:
+      'Organized the first StarMaker Web3 event in Costa Rica (TEC, June 2025), introducing 60+ students to Stellar, NFTs, and decentralized technologies. Partnering with universities to expand blockchain education initiatives.',
+    link: 'https://starmaker.xyz',
+    image: '/images/Kevin-Explaining.jpg',
+    tags: ['Community', 'Education', 'Web3', 'Stellar'],
+  },
   {
     title: 'ETH Pura Vida - Ethereum Community',
     description:
